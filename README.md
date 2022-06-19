@@ -1,6 +1,4 @@
-## Video Title:
-
-- Map / Unlock Special Key Combinations in Neovim
+## Map / Unlock Special Key Combinations in Neovim
 
 ## Links:
 
