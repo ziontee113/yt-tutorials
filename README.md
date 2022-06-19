@@ -1,14 +1,15 @@
-# Video Title:
+### Video Title:
 
 - Map / Unlock Special Key Combinations in Neovim
 
-# Links:
+### Links:
 
 - https://en.wikipedia.org/wiki/List_of_Unicode_characters
 - http://www.leonerd.org.uk/hacks/fixterms/
 
-# Example kitty.conf:
+### Example kitty.conf:
 
+```
 # Shift + Enter
 
 map shift+enter send_text all \x1b[13;2u
@@ -29,6 +30,7 @@ map ctrl+shift+h send_text all \x1b[72;6u
 map ctrl+shift+j send_text all \x1b[74;6u
 map ctrl+shift+k send_text all \x1b[75;6u
 map ctrl+shift+l send_text all \x1b[76;6u
+```
 
 # Example alacritty.conf:
 
