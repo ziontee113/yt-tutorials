@@ -47,6 +47,6 @@ Hydra({
 ## My Ctrl+J and Ctrl+K remap
 
 ```lua
-keymap("n", "<C-j>", [[:keepjumps normal! j}k<cr>]], {noremap = true, silent = true})
-keymap("n", "<C-k>", [[:keepjumps normal! k{j<cr>]], {noremap = true, silent = true})
+vim.keymap.set("n", "<C-j>", [[:keepjumps normal! j}k<cr>]], {noremap = true, silent = true})
+vim.keymap.set("n", "<C-k>", [[:keepjumps normal! k{j<cr>]], {noremap = true, silent = true})
 ```
