@@ -1,49 +1,45 @@
-## Map / Unlock Special Key Combinations in Neovim
+## A Quick Introduction to Hydra.nvim - Neovim Sub Mode Plugin  
 
 ## Links:
 
-- https://en.wikipedia.org/wiki/List_of_Unicode_characters
-- http://www.leonerd.org.uk/hacks/fixterms/
+- https://github.com/anuvyklack/hydra.nvim
 
-## Example kitty.conf:
+## Hydra Window Switch / Resize example:
 
-```
-# Shift + Enter
+```lua
+local Hydra = require("hydra")
 
-map shift+enter send_text all \x1b[13;2u
+Hydra({
+	name = "Change / Resize Window",
+	mode = { "n" },
+	body = "<C-w>",
+	config = {
+		-- color = "pink",
+	},
+	heads = {
+		-- move between windows
+		{ "<C-h>", "<C-w>h" },
+		{ "<C-j>", "<C-w>j" },
+		{ "<C-k>", "<C-w>k" },
+		{ "<C-l>", "<C-w>l" },
 
-# Ctrl + I Remaps
+		-- resizing window
+		{ "H", "<C-w>3<" },
+		{ "L", "<C-w>3>" },
+		{ "K", "<C-w>2+" },
+		{ "J", "<C-w>2-" },
 
-map ctrl+i send_text all \x1b[105;5u
+		-- equalize window sizes
+		{ "e", "<C-w>=" },
 
-# Ctrl + . , ;
+		-- close active window
+		{ "Q", ":q<cr>" },
+		{ "<C-q>", ":q<cr>" },
 
-map ctrl+. send_text all \x1b[46;5u
-map ctrl+, send_text all \x1b[44;5u
-map ctrl+; send_text all \x1b[59;5u
-
-# Ctrl + Shift Remaps
-
-map ctrl+shift+h send_text all \x1b[72;6u
-map ctrl+shift+j send_text all \x1b[74;6u
-map ctrl+shift+k send_text all \x1b[75;6u
-map ctrl+shift+l send_text all \x1b[76;6u
-```
-
-## Example alacritty.conf:
-
-```yaml
-key_bindings:
-  - { key: H, mods: Control|Shift, chars: "\x1b[72;6u" }
-  - { key: J, mods: Control|Shift, chars: "\x1b[74;6u" }
-  - { key: K, mods: Control|Shift, chars: "\x1b[75;6u" }
-  - { key: L, mods: Control|Shift, chars: "\x1b[76;6u" }
-
-  - { key: I, mods: Control, chars: "\x1b[105;5u" }
-
-  - { key: Period, mods: Control, chars: "\x1b[46;5u" }
-  - { key: Comma, mods: Control, chars: "\x1b[44;5u" }
-  - { key: Semicolon, mods: Control, chars: "\x1b[59;5u" }
-
-  - { key: Return, mods: Shift, chars: "\x1b[13;2u" }
+		-- exit this Hydra
+		{ "q", nil, { exit = true, nowait = true } },
+		{ ";", nil, { exit = true, nowait = true } },
+		{ "<Esc>", nil, { exit = true, nowait = true } },
+	},
+})
 ```
