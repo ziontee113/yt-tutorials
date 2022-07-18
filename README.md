@@ -1,5 +1,7 @@
 ## Conceal Boilerplate Code with Treesitter
 
+![conceal](https://user-images.githubusercontent.com/102876811/179524875-051d6823-2772-424b-a732-a5e267355561.jpg)
+
 ## Links:
 
 - https://github.com/nvim-treesitter/playground
@@ -7,6 +9,7 @@
 ## ~/.config/nvim/after/queries/lua/highlights.scm
 
 ```lua
+
 ;; Keywords
 (("return"   @keyword) (#set! conceal ""))
 
