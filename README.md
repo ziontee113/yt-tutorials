@@ -1,4 +1,4 @@
-## A Quick Introduction to Hydra.nvim - Neovim Sub Mode Plugin
+## Conceal Boilerplate Code with Treesitter
 
 ## Links:
 
