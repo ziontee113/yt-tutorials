@@ -7,6 +7,29 @@
 - https://en.wikipedia.org/wiki/List_of_Unicode_characters
 - http://www.leonerd.org.uk/hacks/fixterms/
 
+# Example kitty.conf: (If you're using Tmux)
+## If you're not using Tmux, these extended keys should work out of the box without any configuration.
+### Me myself downgraded my Tmux to version `3.1_c` in order to make mappings work properly.
+
+```
+# Shift + Enter
+map shift+enter send_text all \x1b[13;2u
+
+# Ctrl + I Remaps
+map ctrl+i send_text all \x1b[105;5u
+
+# Ctrl + . , ;
+map ctrl+. send_text all \x1b[46;5u
+map ctrl+, send_text all \x1b[44;5u
+map ctrl+; send_text all \x1b[59;5u
+
+# Ctrl + Shift Remaps
+map ctrl+shift+h send_text all \x1b[72;6u
+map ctrl+shift+j send_text all \x1b[74;6u
+map ctrl+shift+k send_text all \x1b[75;6u
+map ctrl+shift+l send_text all \x1b[76;6u
+```
+
 # Example alacritty.conf:
 
 ```yaml
