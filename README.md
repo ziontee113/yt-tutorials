@@ -7,8 +7,8 @@
 - https://en.wikipedia.org/wiki/List_of_Unicode_characters
 - http://www.leonerd.org.uk/hacks/fixterms/
 
-# Example kitty.conf: (If you're using Tmux)
-## If you're not using Tmux, these extended keys should work out of the box without any configuration.
+## Example kitty.conf: (If you're using Tmux)
+### If you're not using Tmux, these extended keys should work out of the box without any configuration.
 ### Me myself downgraded my Tmux to version `3.1_c` in order to make mappings work properly.
 
 ```
@@ -30,7 +30,7 @@ map ctrl+shift+k send_text all \x1b[75;6u
 map ctrl+shift+l send_text all \x1b[76;6u
 ```
 
-# Example alacritty.conf:
+## Example alacritty.conf:
 
 ```yaml
 key_bindings:
